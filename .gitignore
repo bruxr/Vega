@@ -35,3 +35,4 @@ build/
 
 # Ignore Node modules
 /node_modules/
+public/js/scripts.min.js
