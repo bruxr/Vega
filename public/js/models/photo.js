@@ -8,6 +8,10 @@ var Photo = Backbone.Model.extend({
     };
   },
   
+  initialize: function(attributes) {
+    this.set('url', attributes.url.replace('/237x/', '/736x/'));
+  },
+  
   fullSizeURL: function() {
     return this.get('url').replace('/237x/', '/736x/');
   },
