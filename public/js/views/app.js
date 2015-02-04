@@ -18,7 +18,7 @@ var AppView = Backbone.View.extend({
   },
   
   processURL: function(url) {
-    var regex = /^https\:\/\/www\.pinterest\.com\/([a-zA-Z0-9]+)\/([a-zA-Z0-9]+)\/?$/,
+    var regex = /^https\:\/\/www\.pinterest\.com\/([a-zA-Z0-9]+)\/([a-zA-Z0-9\-]+)\/?$/,
         matches = null,
         self = this;
     if (matches = regex.exec(url)) {
