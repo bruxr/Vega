@@ -19,11 +19,12 @@ var AppView = Backbone.View.extend({
   
   processURL: function(url) {
     var regex = /^https\:\/\/www\.pinterest\.com\/([a-zA-Z0-9]+)\/([a-zA-Z0-9]+)\/?$/,
-        matches = null;
+        matches = null,
+        self = this;
     if (matches = regex.exec(url)) {
       this.url = url;
-      this.buildCollection(matches[1], matches[2]).done(function() {
-        
+      this.buildCollection(matches[1], matches[2]).done(function(photos) {
+        //self.$el.html(new Vega.Slideshow({collection: photos}).render().$el);
       });
     }
   },
@@ -33,7 +34,7 @@ var AppView = Backbone.View.extend({
         coll = new Photos;
         
     return $.getJSON(url)
-            .done(function(res) {
+            .then(function(res) {
               $.each(res.data.pins, function(i, item) {
                 coll.add({
                   url: Photo.getFullsizeURL(item.images['237x'].url),
