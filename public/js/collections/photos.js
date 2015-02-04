@@ -1,3 +1,3 @@
-var ImgCollection = Backbone.Collection.extend({
-  model: Img
+var Photos = Backbone.Collection.extend({
+  model: Photo
 });
