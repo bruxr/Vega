@@ -1,5 +1,11 @@
 var AppView = Backbone.View.extend({
-  el: $('#wrap')
+  
+  el: $('#wrap'),
+  
+  initialize: function() {
+    
+  }
+  
 });
 
 $(function() { window.App = new AppView(); });
