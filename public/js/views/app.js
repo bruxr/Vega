@@ -24,7 +24,7 @@ var AppView = Backbone.View.extend({
     if (matches = regex.exec(url)) {
       this.url = url;
       this.buildCollection(matches[1], matches[2]).done(function(photos) {
-        //self.$el.html(new Vega.Slideshow({collection: photos}).render().$el);
+        self.$el.html(new Slideshow({collection: photos}).render().$el);
       });
     }
   },

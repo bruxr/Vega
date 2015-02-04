@@ -282,8 +282,8 @@ textarea {
     }
 }
 
-body {
-  
+html, body, #wrap {
+  height: 100%;
 }
 
 .urlform {
@@ -318,4 +318,8 @@ button {
 
 button:hover {
   background-color: #5c6bc0;
+}
+
+.slideshow {
+  height: 100%;
 }
